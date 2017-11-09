@@ -4,7 +4,8 @@ import {
     getCount,
     getEntityById,
     getFirstEntity,
-    getLastEntity
+    getLastEntity,
+    filter
 } from '../after/dataManager';
 
 import Entity from '../after/entityManager';
@@ -59,4 +60,4 @@ console.log(all);
 
 const filtered = filter(function (item) {
     return item.age > 20 && item.sex === 'male'
-})
+});
