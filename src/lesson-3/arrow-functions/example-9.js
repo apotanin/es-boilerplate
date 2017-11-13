@@ -12,7 +12,5 @@ const newData = {
 }
 
 const f1 = data.getValue().bind(newData);
-const f2 = data.getValue().call(newData);
 
 console.log(f1()); // 0
-console.log(f2()); // 0
