@@ -8,7 +8,7 @@ export function findString(text, pattern) {
 //         pattern.lastIndex = i;
 //         if (pattern.exec(text)) {
 //             num++;
-//             i = pattern.lastIndex;
+//             i = pattern.lastIndex - 1;
 //         }
 //     }
 //     return num;
