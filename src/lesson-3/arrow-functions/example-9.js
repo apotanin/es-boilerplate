@@ -8,7 +8,7 @@ const data = {
 }
 
 const newData = {
-    data: 1
+    value: 1
 }
 
 const f1 = data.getValue().bind(newData);
