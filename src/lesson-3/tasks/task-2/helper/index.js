@@ -47,9 +47,14 @@ let toInt = (arg) => {
     return arg;
 };
 
+let isNumInRange = (arg, min, max) => {
+    let num = toInt(arg);
+    return (num => min) && (num <=max);
+};
+
 let logAndReturn = (expr) => {
     console.log(expr);
     return expr;
 };
 
-export {validator, getEntity, toInt, logAndReturn};
+export {validator, getEntity, toInt, logAndReturn, isNumInRange};
