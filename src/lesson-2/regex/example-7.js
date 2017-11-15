@@ -1,3 +1,5 @@
+'use strict';
+
 function getFlags(re) {
     var text = re.toString();
 

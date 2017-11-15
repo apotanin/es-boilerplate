@@ -1,3 +1,5 @@
+'use strict';
+
 const text = 'Hello';
 
 console.log(text.repeat(2)); // HelloHello

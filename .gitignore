@@ -8,6 +8,7 @@
 /src/lesson-3/tasks/task-2/after/
 /src/lesson-3/tasks/task-3/after/
 /src/lesson-3/tasks/task-4/after/
+/src/lesson-*/tasks/task-*/after/
 yarn.lock
 .idea/
 package-lock.json

@@ -1,3 +1,5 @@
+'use strict';
+
 import { findString } from '../after';
 
 const text =

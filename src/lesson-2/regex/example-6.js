@@ -1,3 +1,5 @@
+'use strict';
+
 const rx1 = /ab/i;
 const rx2 = new RegExp(rx1); // no errors
 

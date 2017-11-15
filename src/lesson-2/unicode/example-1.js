@@ -1,3 +1,5 @@
+'use strict';
+
 const text = '𩷶';
 
 // ES5

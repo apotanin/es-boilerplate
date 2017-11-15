@@ -1,3 +1,5 @@
+'use strict';
+
 const values = ['fi', 'ﬁ', 'fi'];
 
 values.sort(function (first, second) {

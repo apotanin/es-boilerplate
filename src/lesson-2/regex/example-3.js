@@ -1,3 +1,5 @@
+'use strict';
+
 function hasRegExpU () {
    try {
        var re = new RegExp('.', 'u');

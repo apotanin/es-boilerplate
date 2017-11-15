@@ -1,3 +1,5 @@
+'use strict';
+
 function raw (literals, ...substitutions) {
     let result = '';
     for (let i = 0; i < substitutions.length; i++) {

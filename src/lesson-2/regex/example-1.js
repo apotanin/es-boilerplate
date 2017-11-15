@@ -1,3 +1,5 @@
+'use strict';
+
 const text = '𩷶';
 
 console.log(text.length); // 2

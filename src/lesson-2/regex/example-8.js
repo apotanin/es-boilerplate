@@ -1,3 +1,5 @@
+'use strict';
+
 const rx = /ab/gi;
 
 console.log(rx.source); // ab

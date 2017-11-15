@@ -1,3 +1,5 @@
+'use strict';
+
 const fromCharCode = String.fromCharCode(171510);
 const fromCodePoint = String.fromCodePoint(171510);
 

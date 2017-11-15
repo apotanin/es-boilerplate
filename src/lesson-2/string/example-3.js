@@ -1,3 +1,5 @@
+'use strict';
+
 const text = 'Hello Alteryx';
 
 console.log(text.endsWith('Alteryx')); // true

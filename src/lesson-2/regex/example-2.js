@@ -1,3 +1,5 @@
+'use strict';
+
 function codePointLength (text) {
     const result = text.match(/[\s\S]/gu);
 

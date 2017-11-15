@@ -1,3 +1,5 @@
+'use strict';
+
 let name = 'Jon';
 let text = `Hello, ${ name }!`;
 

@@ -1,3 +1,5 @@
+'use strict';
+
 const text = 'hello1 hello2 hello3';
 
 const pattern = /hello\d\s?/;

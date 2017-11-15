@@ -1,3 +1,5 @@
+'use strict';
+
 function tag(literals, ...substitutions) {
     console.log(literals); // [ 'Hello ', '' ]
     console.log(substitutions); // [ 'Alteryx' ]

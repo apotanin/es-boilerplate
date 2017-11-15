@@ -1,3 +1,5 @@
+'use strict';
+
 let text = '𩷶a';
 
 // ES5
