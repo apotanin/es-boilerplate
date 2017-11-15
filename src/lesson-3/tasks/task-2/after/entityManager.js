@@ -1,3 +1,5 @@
+'use strict';
+
 import {validator} from '../helper'
 
 export default function Entity(obj) {

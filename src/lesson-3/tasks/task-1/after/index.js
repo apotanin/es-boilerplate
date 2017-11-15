@@ -1,3 +1,5 @@
+'use strict';
+
 export default (count = 10, timeout = 1000, callback = v => v) => {
     if (typeof count !== 'number') throw new Error('Count should be a number');
     if (typeof timeout !== 'number') throw new Error('Timeout should be a number');

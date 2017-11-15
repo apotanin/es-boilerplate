@@ -1,3 +1,5 @@
+'use strict';
+
 import {isNumInRange} from "../../task-2/helper/index";
 
 let Timer = () => {

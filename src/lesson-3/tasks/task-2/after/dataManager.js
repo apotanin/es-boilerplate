@@ -1,3 +1,5 @@
+'use strict';
+
 import {validator, getEntity} from '../helper'
 
 let data = [];

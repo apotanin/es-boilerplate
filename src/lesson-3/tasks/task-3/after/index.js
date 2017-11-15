@@ -1,3 +1,5 @@
+'use strict';
+
 import {logAndReturn, toInt} from "../../task-2/helper/index";
 
 export default () => {

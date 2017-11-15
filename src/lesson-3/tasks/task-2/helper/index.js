@@ -1,3 +1,5 @@
+'use strict';
+
 let validator = (obj) => {
 
     if (obj.id === undefined || obj.id === null) throw new Error('id should be defined');
