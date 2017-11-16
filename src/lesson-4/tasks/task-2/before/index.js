@@ -6,27 +6,27 @@ timer.init(0, () => {
     console.log('Timer is configured.');
 });
 
-timer.start(1, time => {
-    const template = `Minutes: ${ time.minutes } Seconds: ${ time.seconds }`;
+timer.start(1, ({minutes, seconds}) => {
+    const template = `Minutes: ${ minutes } Seconds: ${ seconds }`;
 
     console.log(template);
 });
 
 setTimeout(() => {
-    timer.pause(time => {
-        const template = `Last time was Minutes: ${ time.minutes } Seconds: ${ time.seconds }`;
+    timer.pause(({minutes, seconds}) => {
+        const template = `Last time was Minutes: ${ minutes } Seconds: ${ seconds }`;
 
         console.log('Timer is frozen');
         console.log(template);
     });
-    timer.start(2, time => {
-        const template = `Minutes: ${ time.minutes } Seconds: ${ time.seconds }`;
+    timer.start(2, ({minutes, seconds}) => {
+        const template = `Minutes: ${ minutes } Seconds: ${ seconds }`;
 
         console.log(template);
     });
     setTimeout(() => {
-        timer.stop(time => {
-            const template = `Last time was Minutes: ${ time.minutes } Seconds: ${ time.seconds }`;
+        timer.stop(({minutes, seconds}) => {
+            const template = `Last time was Minutes: ${ minutes } Seconds: ${ seconds }`;
 
             console.log('Timer is stopped');
             console.log(template);

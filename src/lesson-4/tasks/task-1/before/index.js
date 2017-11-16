@@ -1,11 +1,11 @@
 import {
     addEntity as add,
-    getEntities,
+    filter,
     getCount,
+    getEntities,
     getEntityById,
     getFirstEntity,
-    getLastEntity,
-    filter
+    getLastEntity
 } from '../after/dataManager';
 
 import Entity from '../after/entityManager';
@@ -56,6 +56,6 @@ const first = getFirstEntity();
 const last = getLastEntity();
 
 // Filter entities by callback
-const filtered = filter(item => item.sex === 'male' && item.age > 20);
+const filtered = filter(({age, sex}) => sex === 'male' && age > 20);
 
 console.log(filtered);
