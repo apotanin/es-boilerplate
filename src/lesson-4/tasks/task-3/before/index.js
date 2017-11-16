@@ -10,14 +10,14 @@ import { getInfo } from '../after';
 //   Array push method
 
 // helper function generateData returns an object
-// which can contain arr1, arr2, arr3 properties.
-// arr1, arr2, arr3 are dynamically generated properties
-// arr2 and arr3 are optional.
+// which can contain arr0, arr1, arr2 properties.
+// arr0, arr1, arr2 are dynamically generated properties
+// arr1 and arr2 are optional.
 /*
 {
-   arr1: [1,2,3],
-   arr2: [2,3,4],
-   arr3: [3,5,7],
+   arr0: [1,2,3],
+   arr1: [2,3,4],
+   arr2: [3,5,7],
    created: 2017-11-15
 }
 */
