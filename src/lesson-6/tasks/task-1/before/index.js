@@ -44,16 +44,16 @@ const firstEntity = man.getEntity();
 // Add man to collection
 add(firstEntity);
 
-const totalViews1 = getEntityTotalviews();
+const totalViews1 = getEntityTotalviews(firstEntity.id);
 console.log(totalViews1); // 46
 
-const totalViews2 = getEntityTotalviews([1, 3]);
+const totalViews2 = getEntityTotalviews(firstEntity.id, [1, 3]);
 console.log(totalViews2); // 23
 
-const totalViews3 = getEntityTotalviews(['facebook', 'twitter']);
+const totalViews3 = getEntityTotalviews(firstEntity.id, ['facebook', 'twitter']);
 console.log(totalViews3); // 23
 
-const totalViews3 = getEntityTotalviews(null, total => total * 3);
-console.log(totalViews3); // 138
+const totalViews4 = getEntityTotalviews(firstEntity.id, null, total => total * 3);
+console.log(totalViews4); // 138
 
 const entitiesSorted = getEntitiesSortedByPopularity();
