@@ -27,7 +27,6 @@ bender.sayAge(); // no more undefined :)
 // I need to have methods from two prototypes in one entity, hm...
 // But I can not do this in JavaScript, or can?
 
-// <- remove this and write code here
-Object.assign(talk, age);
+Object.assign(talk, age); // let's change my age without changing the prototype
 bender.fixAge(5);
 bender.sayAge(); // Happy birthday, now I'm five years old.

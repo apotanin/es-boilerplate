@@ -1,7 +1,7 @@
 'use strict';
 
 function Entity(field) {
-    if (typeof new.target === Entity) {
+    if (new.target === Entity) {
         this.field = field;
     } else {
         throw new Error("You must use new with Entity.");

@@ -2,7 +2,7 @@
 
 var user = {
     name: 'Jon',
-    name: 'Joe' // error in ES5 in non strict mode
+    name: 'Joe' // error in ES5 in strict mode
 };
 
 console.log(user.name);

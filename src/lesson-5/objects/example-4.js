@@ -1,6 +1,5 @@
 'use strict';
 
-// ES5
 function createNewPerson(name, age) {
     return {
         name,
