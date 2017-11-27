@@ -1,10 +1,16 @@
 'use strict';
 
-const name = Symbol('Field name');
+const c = Symbol('Field c');
+const d = Symbol('Field d');
 
-const person = {
-    [name]: 'Tom'
+const object = {
+    a: 'a',
+    b: 'b'
 };
-Object.defineProperty(person, name, { writable: false });
 
-person[name] = 'Oscar'; // TypeError: Cannot assign to read only property 'Symbol(Field name)' of object '#<Object>'
+object[c] = 'c';
+object[d] = 'd';
+
+const keys = Object.getOwnPropertySymbols(object);
+console.log(object[keys[0]]); // c
+console.log(object[keys[1]]); // d
