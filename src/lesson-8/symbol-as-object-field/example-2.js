@@ -11,3 +11,5 @@ const second = person.name;
 
 console.log(first); // Tom
 console.log(second); // Oscar
+
+console.log(person);
