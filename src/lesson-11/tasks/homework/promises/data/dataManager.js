@@ -1,59 +1,68 @@
-import {
-    DataManager
-} from '../after/dataManager';
+'use strict';
 
-import Entity from '../after/entityManager';
+import {getExecutionTime, getValueOrNull, runner, validator} from './helper'
 
-// Create instance for man
-const tomas = {
-    id: 1,
-    firstName: 'Tomas',
-    lastName: 'Anderson',
-    age: 21,
-    sex: 'male'
-};
-const lisa = {
-    id: 2,
-    firstName: 'Lisa',
-    lastName: 'Black',
-    age: 19,
-    sex: 'female'
-};
+const data = Symbol("Data holder");
 
-const man = new Entity(tomas);
-const woman = new Entity(lisa);
+export class DataManager {
 
-// Create data Manager
-const dataManager = new DataManager();
+    constructor() {
+        this[data] = new Map();
+    }
 
-// Get data for man
-const firstEntity = man.getEntity();
+    add(entity) {
+        return new Promise((resolve, reject) => {
 
-// Get data for woman
-const secondEntity = woman.getEntity();
+            const executionTime = getExecutionTime();
+            console.log(`trying to insert entity with id=${entity.id} to the DB. Execution time ${executionTime}`);
+            setTimeout(() => {
+                try {
+                    validator(entity);
+                    if (this[data].get(entity.id)) throw new Error(`entity with id ${entity.id} already exists`);
+                } catch (e) {
+                    return reject(`ERROR(add): ${e.message}`);
+                }
 
-// Add man to collection
-dataManager.add(firstEntity);
+                this[data].set(entity.id, entity);
+                console.log(`entity with id=${entity.id} has been inserted to the DB.`);
+                resolve(true);
+            }, executionTime);
+        })
+    };
 
-// Add woman to collection
-dataManager.add(secondEntity);
+    getCount() {
+        const getCount = () => Promise.resolve(this[data].size);
+        return runner(getCount);
+    }
 
-// Get all entities
-const all = dataManager.getEntities();
+    getEntities() {
+        const getEntities = () => this[data].size ? [...this[data].values()] : null;
+        return runner(getEntities);
+    };
 
-// Print entities count
-const count = dataManager.getCount();
+    getEntityById(id) {
+        const getEntityById = (_id) => getValueOrNull(this[data].get(_id));
+        return runner(getEntityById, id)
+    };
 
-// Get entity by entity.id
-const entityById = dataManager.getEntityById(1);
+    getFirstEntity() {
+        const getFirstEntity = () => getValueOrNull([...this[data].values()][0]);
+        return runner(getFirstEntity)
+    };
 
-// Get first entity
-const first = dataManager.getFirstEntity();
+    getLastEntity() {
+        const getLastEntity = () => getValueOrNull([...this[data].values()].pop());
+        return runner(getLastEntity);
+    };
 
-// Get last entity
-const last = dataManager.getLastEntity();
+    filter(_callback = () => false) {
+        const filter = (callback) => {
+            if (typeof callback !== 'function') throw new Error('callback should be a function');
+            const result = [...this[data].values()].filter(_callback);
+            return result.length ? result : null;
+        };
+        return runner(filter, _callback);
+    };
 
-// Filter entities by callback
-const filtered = dataManager.filter(({ sex, age }) => sex === 'male' && age > 20);
+}
 
-console.log(filtered);
