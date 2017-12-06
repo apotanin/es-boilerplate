@@ -11,7 +11,7 @@ const uriSource = [
 ];
 
 const fetchAll = (iterableUriSource) => {
-    return iterableUriSource.forEach(async url => {
+    iterableUriSource.forEach(async url => {
             try {
                 const resp = await fetch(url);
                 const {articles} = await resp.json();
