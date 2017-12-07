@@ -10,20 +10,21 @@ const uriSource = [
     'https://google.com',
 ];
 
-const fetchAll = (iterableUriSource) => {
-    iterableUriSource.forEach(async url => {
-            try {
-                const resp = await fetch(url);
-                const {articles} = await resp.json();
-                articles.forEach(({author, title}) => {
-                    console.log(`author: ${author} \t title ${title}`);
-                });
-            } catch (e) {
-                console.log(`error upon fetching url ${url}`);
+(async () => {
+    const fetchAll = async (iterableUriSource, parser) => {
+        return await Promise.all(iterableUriSource.map(async url => {
+                try {
+                    const resp = await fetch(url);
+                    const {articles} = await resp.json();
+                    return articles.map(({author, title}) => ({author, title}));
+                } catch (e) {
+                    return {error: `error upon fetching url ${url}`};
+                }
             }
-        }
-    )
-};
+            )
+        )
+    };
 
-fetchAll(uriSource);
-
+    const fetchResult = await fetchAll(uriSource);
+    console.log(fetchResult);
+})();
